@@ -45,11 +45,3 @@ def telepon(prefiks_nol: str= "812"):
     nomor = '{0}{1}'.format(prefiks_nol, fake.msisdn()[5:])
     nomor_seri = phonenumbers.parse(nomor, "ID")
     return phonenumbers.format_number(nomor_seri, phonenumbers.PhoneNumberFormat.NATIONAL)
-
-if __name__=="__main__":
-    operator = Operator()
-    nomor = telepon(operator.xl_nol[0])
-
-    pp = Prefiks(nomor)
-    
-    print("Nomor {0} dan operatornya {1}".format(nomor, pp.prefiks()))
